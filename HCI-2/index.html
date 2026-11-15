@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Timetable</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>KK Wagh Institute of Engineering</h1>
+        <p>Department of Information Technology</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#timetable">Timetable</a>
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="#media">Multimedia</a>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <main>
+
+            <!-- (A) Class Timetable -->
+            <section id="timetable">
+
+                <h2>Class Timetable - TY IT</h2>
+
+                <table>
+                    <caption>Weekly Class Timetable</caption>
+
+                    <tr>
+                        <th>Day</th>
+                        <th>9-10 AM</th>
+                        <th>10-11 AM</th>
+                        <th>11-12 PM</th>
+                        <th>12-1 PM</th>
+                    </tr>
+
+                    <tr>
+                        <td>Monday</td>
+                        <td>DBMS</td>
+                        <td>CN</td>
+                        <td rowspan="2">Practical</td>
+                        <td>Break</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>OS</td>
+                        <td>DAA</td>
+                        <td>Break</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>CN</td>
+                        <td>DBMS</td>
+                        <td>OS</td>
+                        <td>Break</td>
+                    </tr>
+
+                    <tr>
+                        <td>Thursday</td>
+                        <td colspan="2">Web Technology Practical</td>
+                        <td>DAA</td>
+                        <td>Break</td>
+                    </tr>
+
+                    <tr>
+                        <td>Friday</td>
+                        <td>OS</td>
+                        <td>CN</td>
+                        <td>DBMS</td>
+                        <td>Break</td>
+                    </tr>
+
+                </table>
+            </section>
+
+
+            <!-- (B) Infrastructure using DIV and SPAN -->
+            <section id="infrastructure">
+
+                <h2>University Infrastructure</h2>
+
+                <div class="infra-container">
+
+                    <div class="infra-card">
+                        <h3>Computer Laboratory</h3>
+                        <p>
+                            The university has modern
+                            <span>computer laboratories</span>
+                            with updated systems and software.
+                        </p>
+                    </div>
+
+                    <div class="infra-card">
+                        <h3>Library</h3>
+                        <p>
+                            A well-equipped library provides
+                            <span>books, journals and digital resources</span>
+                            for students.
+                        </p>
+                    </div>
+
+                    <div class="infra-card">
+                        <h3>Auditorium</h3>
+                        <p>
+                            The auditorium is used for
+                            <span>seminars, events and workshops</span>.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Multimedia -->
+            <section id="media">
+
+                <h2>University Multimedia</h2>
+
+                <h3>University Audio</h3>
+
+                <audio controls>
+                    <source src="audio.mp3" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+
+                <h3>University Video</h3>
+
+                <video width="100%" height="250" controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+
+            </section>
+
+        </main>
+
+
+        <!-- Sidebar -->
+        <aside>
+            <h3>Quick Information</h3>
+
+            <p><b>Department:</b> Information Technology</p>
+            <p><b>Course:</b> B.Tech</p>
+            <p><b>Academic Year:</b> 2026-27</p>
+
+            <hr>
+
+            <h3>Facilities</h3>
+            <ul>
+                <li>Computer Labs</li>
+                <li>Central Library</li>
+                <li>Sports Ground</li>
+                <li>Auditorium</li>
+            </ul>
+        </aside>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 KK Wagh Institute of Engineering</p>
+        <p>Department of Information Technology</p>
+    </footer>
+
+</body>
+</html>

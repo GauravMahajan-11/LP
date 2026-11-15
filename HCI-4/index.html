@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Event Explorer</h1>
+        <p>Discover and explore upcoming events</p>
+    </header>
+
+    <main>
+        <section class="filters">
+            <input type="text" id="search" placeholder="Search events...">
+
+            <select id="category">
+                <option value="All">All Categories</option>
+                <option value="Technology">Technology</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+
+            <input type="date" id="eventDate">
+
+            <select id="sort">
+                <option value="default">Sort By</option>
+                <option value="asc">Date: Earliest First</option>
+                <option value="desc">Date: Latest First</option>
+            </select>
+        </section>
+
+        <h2>Upcoming Events</h2>
+
+        <div id="eventContainer" class="events"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

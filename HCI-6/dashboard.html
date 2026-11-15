@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <h2>Event Management Dashboard</h2>
+
+    <button onclick="logout()">Logout</button>
+
+    <h3>Add / Update Event</h3>
+
+    <form onsubmit="saveEvent(event)">
+        <input type="text" id="name"
+               placeholder="Event Name" required>
+
+        <input type="date" id="date" required>
+
+        <input type="text" id="location"
+               placeholder="Location" required>
+
+        <button type="submit" id="btn">Add Event</button>
+    </form>
+
+    <h3>All Events</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="eventList"></tbody>
+    </table>
+
+</div>
+
+<script>
+
+// Check login
+if (sessionStorage.getItem("admin") !== "true") {
+    window.location.href = "index.html";
+}
+
+// Get saved events
+let events = JSON.parse(localStorage.getItem("events")) || [];
+let editIndex = -1;
+
+// Display events
+function displayEvents() {
+    let list = document.getElementById("eventList");
+    list.innerHTML = "";
+
+    events.forEach((event, index) => {
+        list.innerHTML += `
+            <tr>
+                <td>${event.name}</td>
+                <td>${event.date}</td>
+                <td>${event.location}</td>
+                <td>
+                    <button onclick="editEvent(${index})">Edit</button>
+                    <button onclick="deleteEvent(${index})">Delete</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+// Add or Update event
+function saveEvent(e) {
+    e.preventDefault();
+
+    let event = {
+        name: document.getElementById("name").value,
+        date: document.getElementById("date").value,
+        location: document.getElementById("location").value
+    };
+
+    if (editIndex === -1) {
+        events.push(event);
+    } else {
+        events[editIndex] = event;
+        editIndex = -1;
+        document.getElementById("btn").innerText = "Add Event";
+    }
+
+    localStorage.setItem("events", JSON.stringify(events));
+
+    document.querySelector("form").reset();
+    displayEvents();
+}
+
+// Edit event
+function editEvent(index) {
+    document.getElementById("name").value = events[index].name;
+    document.getElementById("date").value = events[index].date;
+    document.getElementById("location").value = events[index].location;
+
+    editIndex = index;
+    document.getElementById("btn").innerText = "Update Event";
+}
+
+// Delete event
+function deleteEvent(index) {
+    if (confirm("Delete this event?")) {
+        events.splice(index, 1);
+        localStorage.setItem("events", JSON.stringify(events));
+        displayEvents();
+    }
+}
+
+// Logout
+function logout() {
+    sessionStorage.removeItem("admin");
+    window.location.href = "index.html";
+}
+
+displayEvents();
+
+</script>
+
+</body>
+</html>
